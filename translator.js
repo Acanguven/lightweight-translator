@@ -40,7 +40,7 @@ export default class Translator {
    * @private
    */
   static __getHash(name, language, variableSet) {
-    return name + language + (variableSet ? variableSet.toString() : '');
+    return name + language + (variableSet ? JSON.stringify(variableSet) : '');
   }
 
   /**
