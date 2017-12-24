@@ -47,3 +47,9 @@ read_log: 'I read {bookName}'
 `console.log(Translator.t('read_log', LANGUAGES.EN, {bookName: 'lotr'}));`
 
 --> I read Lord Of The Rings
+
+### Untranslated Text
+
+`console.log(Translator.t('nope', LANGUAGES.EN));`
+
+-->\*nope|EN\*
