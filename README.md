@@ -41,7 +41,7 @@ read_log: '{bookName} adlı kitabı okudum.'
 --> Yüzüklerin Efendisi adlı kitabı okudum
 
 
-lotr: 'Yüzüklerin Efendisi',
+lotr: 'Lord Of The Rings',
 read_log: 'I read {bookName}'
 
 `console.log(Translator.t('read_log', LANGUAGES.EN, {bookName: 'lotr'}));`
