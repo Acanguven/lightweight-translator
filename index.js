@@ -5,6 +5,13 @@ class Translator {
     this.__cache = {};
   }
 
+  /**
+   * Translates the given string
+   * @param name
+   * @param language
+   * @param variableSet
+   * @returns {*}
+   */
   translate(name, language, variableSet) {
     const hash = this.__createHash.apply(null, arguments);
     if (this.__cache[hash]) return this.__cache[hash];
