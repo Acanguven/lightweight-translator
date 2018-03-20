@@ -108,4 +108,15 @@ describe('Translator', function () {
     const translated_from_cache = Translator.translate('status', 'TR', {status: 'available'});
     expect(translated_from_cache).to.eq('changed memory');
   });
+
+  it('should set default language', function () {
+    Translator.addLanguage('TR', {
+      status_available: 'Durum: Uygun'
+    });
+
+    Translator.setDefault('TR');
+
+    const translated_tr = Translator.translate('status_available');
+    expect(translated_tr).to.eq('Durum: Uygun');
+  });
 });

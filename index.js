@@ -3,6 +3,15 @@ class Translator {
     this.languages = {};
 
     this.__cache = {};
+    this.defaultLanguage = null;
+  }
+
+  /**
+   * Sets the default language
+   * @param languageKey
+   */
+  setDefault(languageKey){
+    this.defaultLanguage = languageKey;
   }
 
   /**
@@ -13,6 +22,9 @@ class Translator {
    * @returns {*}
    */
   translate(name, language, variableSet) {
+    if(!language && this.defaultLanguage) {
+      language = this.defaultLanguage;
+    }
     const hash = this.__createHash.apply(null, arguments);
     if (this.__cache[hash]) return this.__cache[hash];
 
